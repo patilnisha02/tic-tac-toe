@@ -44,7 +44,9 @@ background-color: rgb(249, 246, 246);
 
 #reset {
   margin: 5vw;
-  
+  padding: 3px 3px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 
@@ -52,3 +54,10 @@ background-color: rgb(249, 246, 246);
 background-color: rgb(120, 120, 240);
 color: white;
 }
+
+.info{
+  padding: 0 1vw;
+  margin: 1vw;
+  font-size: 3vw;
+}
+
