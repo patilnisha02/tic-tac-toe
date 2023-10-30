@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MY COOL GAME</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>
+      WELCOME <br />
+      to <br />
+      <b id="title"> Tic Tac Toe</b>
+    </h1>
+    <div class="gameContainer">
+      <div class="container">
+        <div class="cell"><span class="boxText"> </span></div>
+        <div class="cell"><span class="boxText"> </span></div>
+        <div class="cell"><span class="boxText"> </span></div>
+        <div class="cell"><span class="boxText"> </span></div>
+        <div class="cell"><span class="boxText"> </span></div>
+        <div class="cell"><span class="boxText"> </span></div>
+        <div class="cell"><span class="boxText"> </span></div>
+        <div class="cell"><span class="boxText"> </span></div>
+        <div class="cell"><span class="boxText"> </span></div>
+      </div>
+    </div>
+    <div class="gameInfo">
+      <span class="info">Turn for X</span>
+        <button id="reset">START</button>
+      
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
 </html>

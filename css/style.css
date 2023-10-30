@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+}
+
+.gameContainer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#title {
+    font-size: 6vw;
+    font-family: Playpen Sans;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(3, 10vw);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cell{
+    border: 1px solid black;
+    font-size: 5vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:hover {
+background-color: rgb(249, 246, 246);
+}
+
+
+#reset {
+  margin: 5vw;
+  
+}
+
+
+#reset:hover {
+background-color: rgb(120, 120, 240);
+color: white;
+}
