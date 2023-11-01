@@ -18,8 +18,7 @@ const checkWin = () => {
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
-  ]
-
+  ];
 
   wins.forEach((element) => {
     if (
@@ -29,45 +28,62 @@ const checkWin = () => {
     ) {
       document.querySelector(".info").innerText =
         boxText[element[0]].innerText + " Won ";
-      isgameover = true
-      return
+      isgameover = true;
+      document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "300px"
+      return;
     }
   });
 };
 
-
-
-
-
-
 //Game Logic
+let clickCount = 0;
 
 let boxes = document.getElementsByClassName("cell");
 Array.from(boxes).forEach((element) => {
   let boxText = element.querySelector(".boxText");
   element.addEventListener("click", () => {
-    if (boxText.innerText === "") {
-      boxText.innerText = turn;
-      turn = changeTurn();
-      checkWin();
-      if (!isgameover) {
-        document.getElementsByClassName("info")[0].innerText =
-          "Turn for " + turn;
+    if (isgameover === true) {
+      document.getElementsByClassName("info")[0].innerText =
+        "Game Over. Please Reset Game.";
+    
+     }
+    
+    
+    else {
+      if (boxText.innerText === "") {
+        boxText.innerText = turn;
+        turn = changeTurn();
+        checkWin();
+        if (!isgameover) {
+          document.getElementsByClassName("info")[0].innerText =
+            "Turn for Player " + turn;
+        }
       }
     }
+    if (clickCount === 8  ){
+      document.getElementsByClassName("info")[0].innerText = "Game Draw. Please reset Game."
+    }
+    clickCount += 1;
   });
 });
 
+// to reset and start the new game
 
-//to reset and start the new game
+reset.addEventListener("click", () => {
+  let boxText = document.querySelectorAll(".boxText");
+  Array.from(boxText).forEach((element) => {
+    element.innerText = [""];
+  });
+  turn = "X";
+  isgameover = false;
+  document.getElementsByClassName("info")[0].innerText = "Turn for Player " + turn;
+  document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
+});
 
-reset.addEventListener('click', () =>{
-    let boxText = document.querySelectorAll('.boxText');
-    Array.from(boxText).forEach(element => {
-        element.innerText = [""]
-    });
-    turn = "X";
-    isgameover = false
-    document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
-    unclick();
-} )
+
+function isDraw(){
+  return [...cellElements].every(cell => {
+    return cell.classList.contains() ||
+    cell.classList.contains()
+  })
+}
