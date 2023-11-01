@@ -29,7 +29,9 @@ const checkWin = () => {
       document.querySelector(".info").innerText =
         boxText[element[0]].innerText + " Won ";
       isgameover = true;
-      document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "300px"
+      document
+        .querySelector(".imgbox")
+        .getElementsByTagName("img")[0].style.width = "300px";
       return;
     }
   });
@@ -42,14 +44,11 @@ let boxes = document.getElementsByClassName("cell");
 Array.from(boxes).forEach((element) => {
   let boxText = element.querySelector(".boxText");
   element.addEventListener("click", () => {
+    clickCount += 1;
     if (isgameover === true) {
       document.getElementsByClassName("info")[0].innerText =
         "Game Over. Please Reset Game.";
-    
-     }
-    
-    
-    else {
+    } else {
       if (boxText.innerText === "") {
         boxText.innerText = turn;
         turn = changeTurn();
@@ -60,10 +59,11 @@ Array.from(boxes).forEach((element) => {
         }
       }
     }
-    if (clickCount === 8  ){
-      document.getElementsByClassName("info")[0].innerText = "Game Draw. Please reset Game."
+
+    if (clickCount > 8) {
+      document.getElementsByClassName("info")[0].innerText =
+        "Game Draw. Please reset Game.";
     }
-    clickCount += 1;
   });
 });
 
@@ -76,14 +76,9 @@ reset.addEventListener("click", () => {
   });
   turn = "X";
   isgameover = false;
-  document.getElementsByClassName("info")[0].innerText = "Turn for Player " + turn;
-  document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
+  clickCount = 0;
+  document.getElementsByClassName("info")[0].innerText =
+    "Turn for Player " + turn;
+  document.querySelector(".imgbox").getElementsByTagName("img")[0].style.width = //added an animation
+    "0px";
 });
-
-
-function isDraw(){
-  return [...cellElements].every(cell => {
-    return cell.classList.contains() ||
-    cell.classList.contains()
-  })
-}
